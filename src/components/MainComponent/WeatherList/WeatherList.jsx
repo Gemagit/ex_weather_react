@@ -1,46 +1,43 @@
 import React from "react";
 import WeatherCard from "./WeatherCard"
-import { useState, useEffect} from 'react'
+import { useState, useEffect } from 'react'
 //import data from "./data.json"
 
 const WeatherList = () => {
 
-const [city, setCity] = useState('Madrid');
-const [weather, setWeather] = useState([]);
+  const [weather, setWeather] = useState([]);
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
+ /*  const handleSubmit = async (e) => {
+    e.preventDefault();
+  }; */
 
-};
-
-useEffect(() => {
-  const fetchWeather = async () => {
-    try {
-       const response = await fetch("api.openweathermap.org/data/2.5/weather?q=${city}&appid=MI_API_KEY"); 
-      if (!response.ok) {
-        throw new Error('Error al cargar el pronóstico extendido');
-      }
-      const data = await response.json();
-      setWeather(data.list);
-    } catch (error) {
-      console.error(error);
+  useEffect(() => {
+    const getWeather = async () => {
+      const resp = await fetch('https://api.openweathermap.org/data/2.5/weather?q=Madrid&APPID=fe997d642f357d5af23b3bc42fbe7688');
+      const data = await resp.json();
+      setWeather(data);
     }
-  };
-  fetchWeather();
-}, [city]);
+    getWeather();
+  }, []);
 
-return (
-  <section>
-    <form onSubmit={handleSubmit}>
-      <input type="text" value={city} onChange={(e) => setCity(e.target.value)} />
-      <button type="submit">Buscar</button>
-    </form>
 
-    {weather.map((dayWeather) => (
-      <WeatherCard key={dayWeather.dt} day={dayWeather} />
-    ))}
-  </section>
-);
+  return (
+    <p>{JSON.stringify(weather)}</p>
+  /*   <section>
+      <form onSubmit={handleSubmit}>
+        <input type="text" value={weather.name} />
+        <button type="submit">Buscar</button>
+      </form>
+{weather.name !== ""
+            <article>
+              <span> {weather.main.temp}</span>
+              <p>{weather.weather[0].main}</p>
+            </article>
+            }
+      
+    </section> */
+  );
 }
+
 
 export default WeatherList;

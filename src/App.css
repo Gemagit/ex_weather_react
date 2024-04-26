@@ -3,10 +3,15 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  color:white;
 }
 
 body {
+  width: 100%;
   background-image: url("./assets/lluvia.jpg");
+  background-size:cover;
+  background-repeat:repeat;
+  background-position: center;
 }
 
 form {
@@ -35,25 +40,13 @@ article {
 
 
 input {
-  color: rgb(36, 36, 69);
+  color: rgb(64, 145, 48);
   width: 80%;
   height: 30px;
   border-radius: 8px;
 }
 
 
-.card {
-  width: 90%;
-  background-color: aquamarine;
-  height: 2px;
-  margin:15px;
-  margin-top: 5px;
-}
-
-.search {
-  width: 100%;
-  margin: 20px;
-}
 
 h3 {
   width: 80%;
