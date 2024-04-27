@@ -23,7 +23,7 @@ const WeatherList = () => {
   useEffect(() => {
     const getWeather = async () => {
       try {
-        const resp = await fetch(`https://api.openweathermap.org/data/2.5/forecast?units=metric&q=Madrid&appid=fe997d642f357d5af23b3bc42fbe7688`);
+        const resp = await fetch(`https://api.openweathermap.org/data/2.5/forecast?units=metric&q=Madrid&appid=${MI_API_KEY}`);
         const data = await resp.json();
         setWeather(data);
       } catch (error) {
