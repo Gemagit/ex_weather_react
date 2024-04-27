@@ -10,7 +10,7 @@ body {
   width: 100%;
   background-image: url("./assets/lluvia.jpg");
   background-size:cover;
-  background-repeat:repeat;
+  background-repeat:no-repeat;
   background-position: center;
 }
 
@@ -32,10 +32,12 @@ form {
 
 article {
   border-radius: 4px;
+  color:black;
   background-color: rgb(155, 155, 205);
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
+  box-shadow: -1px -1px 6px 0 rgb(122, 221, 102), 4px 4px 16px 2px rgb(92, 162, 235);
 }
 
 

@@ -1,41 +1,45 @@
 import React from "react";
 import WeatherCard from "./WeatherCard"
 import { useState, useEffect } from 'react'
-//import data from "./data.json"
+
 
 const WeatherList = () => {
 
-  const [weather, setWeather] = useState([]);
+  const [weather, setWeather] = useState(null);
 
- /*  const handleSubmit = async (e) => {
-    e.preventDefault();
-  }; */
+
+  const paintCards = () => {
+    if (!weather || !weather.list) return null;
+
+    return weather.list.map((weatherItem, index) => (
+      <WeatherCard
+        key={index}
+        weather={weatherItem}
+      />
+    ));
+  }
+
 
   useEffect(() => {
     const getWeather = async () => {
-      const resp = await fetch('https://api.openweathermap.org/data/2.5/weather?q=Madrid&APPID=fe997d642f357d5af23b3bc42fbe7688');
-      const data = await resp.json();
-      setWeather(data);
+      try {
+        const resp = await fetch(`https://api.openweathermap.org/data/2.5/forecast?units=metric&q=Madrid&appid=fe997d642f357d5af23b3bc42fbe7688`);
+        const data = await resp.json();
+        setWeather(data);
+      } catch (error) {
+        console.error("Error fetching weather data:", error);
+      }
     }
-    getWeather();
-  }, []);
+      getWeather();
+    }, []);
 
 
   return (
-    <p>{JSON.stringify(weather)}</p>
-  /*   <section>
-      <form onSubmit={handleSubmit}>
-        <input type="text" value={weather.name} />
-        <button type="submit">Buscar</button>
-      </form>
-{weather.name !== ""
-            <article>
-              <span> {weather.main.temp}</span>
-              <p>{weather.weather[0].main}</p>
-            </article>
-            }
-      
-    </section> */
+    //<article>{JSON.stringify(weather)}</article>
+    <section>
+
+      {paintCards()}
+    </section>
   );
 }
 
