@@ -8,41 +8,43 @@
 
 body {
   width: 100%;
-  background-image: url("./assets/lluvia.jpg");
-  background-size:cover;
-  background-repeat:no-repeat;
-  background-position: center;
+  background-color: #dbd3d8;
+  display: flex;
+  flex-direction: column;
 }
 
+
 form {
-  height: 150px;
+  height: 100px;
   width: 100%;
   margin-top: 20px;
   margin-bottom: 20px;
-  background-color: rgb(106, 106, 101);
+  background-color: rgb(214, 209, 214);
   padding: 2px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   border-radius: 4px;
   align-items: center;
-  box-shadow: -1px -1px 6px 0 rgb(122, 221, 102), 4px 4px 16px 2px rgb(92, 162, 235);
+  box-shadow: -1px -1px 6px 0 rgb(194, 147, 222), 4px 4px 16px 2px rgb(147, 127, 213);
 
 }
 
 article {
+  width: 100%;
   border-radius: 4px;
   color:black;
-  background-color: rgb(155, 155, 205);
+  background-color: rgb(184, 184, 224);
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
-  box-shadow: -1px -1px 6px 0 rgb(122, 221, 102), 4px 4px 16px 2px rgb(92, 162, 235);
+  align-items: center;
+  box-shadow: -1px -1px 6px 0 rgb(194, 147, 222), 4px 4px 16px 2px rgb(147, 127, 213);
 }
 
 
 input {
-  color: rgb(64, 145, 48);
+  color: rgb(46, 9, 103);
   width: 80%;
   height: 30px;
   border-radius: 8px;
@@ -54,10 +56,16 @@ h3 {
   width: 80%;
   margin-left: 40px;
   color: aliceblue;
-  background-color: #888;
-  box-shadow: -1px -1px 6px 0 rgb(122, 221, 102), 4px 4px 16px 2px rgb(92, 162, 235);
+  background-color: #b8a1c3;
+  box-shadow: -1px -1px 6px 0 rgb(184, 123, 219), 4px 4px 16px 2px rgb(147, 127, 213);
 
 }
+
+.logoWeather {
+  width: 90px;
+  text-align: center;
+}
+     
 
 .logo {
   height: 6em;

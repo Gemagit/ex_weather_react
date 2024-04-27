@@ -15,7 +15,7 @@ const FormCity = (setCity) => {
         <input
           type="text"
           ref={cityRef}
-          placeholder="Ingrese una ciudad"
+          placeholder="Madrid"
         />
         <button onClick={handleClick} type="button">Buscar</button>
       </form>
